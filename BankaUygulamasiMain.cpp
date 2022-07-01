@@ -283,15 +283,18 @@ int main() {
 						if(Hesap[j].getMiktar() != 0)
 						{
 							
-							if(Hesap[j].getMiktar() > AktarilanPara)
+							if(Hesap[j].getMiktar() >= AktarilanPara)
 							{
 								Hesap[HesapNo2-1].setMiktar(Hesap[HesapNo2-1].getMiktar()+AktarilanPara);
 								Hesap[j].setMiktar(Hesap[j].getMiktar()-AktarilanPara);
+								break;
 							}
 							else
 							{
 								Hesap[HesapNo2-1].setMiktar(Hesap[HesapNo2-1].getMiktar()+Hesap[j].getMiktar());
+								AktarilanPara -= Hesap[j].getMiktar();							
 								Hesap[j].setMiktar(0);
+								
 							}
 						}		
 					}
